@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lr7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="main-container" style="position: relative;">
+        <div class="cart-img-container">
+            <img class="cart" src="https://img.icons8.com/?size=256&id=3538&format=png" alt="shopping-cart">
+            <span id="cartItemCount" class="cart__num">0</span>
+        </div>
+        <h1>Обов'язково додайте своє замовлення</h1>
+        <div class="content-container">
+            <div class="button-slider btn__prev">&lt;</div>
+            <section class="columns column__first">
+                <div class="circle"><span class="circle__text">новинка</span></div>
+                <div class="column__title-container"><h2>Бізнес</h2></div>
+                <div class="line"></div>
+                <div class="img-container"><img src="img/column-first-shop.jpg" alt="Shop"></div>
+                <div class="name-of-product-container"><p class="name-of-product">Магазин легкої промисловості</p></div>
+                <div class="price-container"><span class="price-text"></span></div>
+                <div class="column-btn__buy-container">
+                    <button disabled class="column-btn__buy">
+                        <span>Незабаром у продажі</span></button></div>
+            </section>
+            <section class="columns column__second">
+                <div class="circle"><span class="circle__text">новинка</span></div>
+                <div class="column__title-container"><h2>Житло</h2></div>
+                <div class="line"></div>
+                <div class="img-container"><img src="img/column-second-flat.jpg" alt=""></div>
+                <div class="name-of-product-container"><p class="name-of-product">Житлова квартира</p></div>
+                <div class="price-container">
+                    $<span class="column-second__price-line-through">55 000 </span>
+                    $<span class="price-text">51000</span>
+                </div>
+                <div class="column-btn__buy-container">
+                    <button onclick="addToCart()" class="column-btn__buy btn_buy">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+            </section>
+            <section class="columns column__third">
+                <div class="column__title-container"><h2>Житло</h2></div>
+                <div class="line"></div>
+                <div class="img-container"><img src="img/column-third-house.jpg" alt=""></div>
+                <div class="name-of-product-container"><p class="name-of-product">Будинок</p></div>
+                <div class="price-container">$<span class="price-text">45000</span></div>
+                <div class="column-btn__buy-container">
+                    <button onclick="addToCart()" class="column-btn__buy btn_buy">
+                        <span>В корзину</span>
+                    </button>
+                </div>
+            </section>
+            </section>
+            <section class="columns column__fourth">
+                <div class="circle"><span class="circle__text">новинка</span></div>
+                <div class="column__title-container"><h2>Бізнес</h2></div>
+                <div class="line"></div>
+                <div class="img-container"><img src="img/column-fourth-commercial.jpg" alt=""></div>
+                <div class="name-of-product-container"><p class="name-of-product">Комерційне приміщення</p></div>
+                <div class="price-container">$<span class="price-text">70500</span></div>
+<div class="column-btn__buy-container">
+                    <button onclick="addToCart()" class="column-btn__buy btn_buy">
+                        <span>В корзину</span>
+                    </button>
+                </div>            </section>
+            <div class="button-slider btn__next">&gt;</div>
+        </div>
+
+    <div class="modal" id="addingToCartModal">
+        <button class="close" id="addingToCartCloseBtn" onclick="closeModal()">&times;</button>
+        <p>Додати до кошика: </p>
+        <p id="productNameAdd" class="name-of-product"></p> <p>Ціна за шт. <span id="productPriceAdd"></span>$</p> у кількості:
+        <input type="number" min="1" max="50" id="productQuantityAdd">
+        <p>Загальна вартість: <span id="totalPriceAdd"></span> ₴</p>
+        <button id="btnAddToCart" class="btnAdd btnAddToCart">Додати до корзини</button>
+    </div>
+    
+    <div class="modal" id="addedToCartModal">
+        <button class="close" id="addingToCartCloseBtn" onclick="closeModal()">&times;</button>
+        <p>Товар додано до корзини</p>
+        <a href="cart.html">Перейти у корзину</a>
+        <button class="btnContinueShopping close">Продовжити покупки</button>
+    </div>
+    
+    <div class="modal" id="emptyCartModal">
+        <button class="close" id="addingToCartCloseBtn" onclick="closeModal()">&times;</button>
+        <p>Корзина порожня</p>
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
